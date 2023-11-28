@@ -2,268 +2,161 @@
 <html lang="ar" dir="rtl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <title>ترشيح طالب للاختبار</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <title>استمارة اختبار المنهاج</title>
 </head>
 
 <body>
-    <main class="container mt-5">
 
-        <h1 class="h1 text-center">ترشيح طالب للإختبار</h1>
-        <table class="table table-striped text-center align-middle">
-            <thead>
-                <tr>
-                    <th>اسم الطالب</th>
-                    <th>مستويات المراجعة</th>
-                    <th>حالة اختبار الجديد</th>
-                    <th>حالة اختبار المراجعة</th>
-                </tr>
-            </thead>
-            <tbody class="table-group-divider">
-                <!-- Sample student data -->
-                <tr>
-                    <td>أمل</td>
-                    <td>من: 1-1 إلى: 1-2</td>
-                    <td id="inExecuse00113">
-                        <div id="inAppointment00113" class="d-inline">
-                            <!-- حجز موعد -->
-                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
-                                data-bs-target="#examAppointment00113">
-                                تحديد موعد
-                            </button>
-
-                            <div class="modal fade" id="examAppointment00113" tabindex="-1"
-                                aria-labelledby="examAppointmentLabel" aria-hidden="false">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h1 class="modal-title fs-5">تحديد موعد الإختبار</h1>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form action="#" class="form">
-                                                <div class="d-flex mb-3 gx-5">
-                                                    <label for="examDate00113" class="form-label">تاريخ
-                                                        الإختبار:</label>
-                                                    <input type="date" id="examDate00113" class="form-control">
-                                                </div>
-                                                <div class="d-flex mb-3 gx-5">
-                                                    <label for="examTime00113" class="form-label">وقت الإختبار:</label>
-                                                    <input type="time" id="examTime00113" class="form-control">
-                                                </div>
-                                                <div class="text-end">
-                                                    <button type="button" class="btn btn-primary"
-                                                        onclick="confirmAppointment('001', 1, 3)">موافق</button>
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-bs-dismiss="modal">إلغاء</button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- إعتذار -->
-                        <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal"
-                            data-bs-target="#examExecuse00113">
-                            إعتذار
-                        </button>
-
-                        <div class="modal fade" id="examExecuse00113" tabindex="-1" aria-labelledby="examExecuseLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5">سبب الإعتذار</h1>
-                                    </div>
-                                    <div class="modal-body p-5">
-                                        <form action="#" class="form">
-                                            <textarea class="form-control mb-3" id="studentExecuse00113"
-                                                rows="3"></textarea>
-                                            <div class="text-end">
-                                                <button type="button" class="btn btn-primary"
-                                                    onclick="sendExecuse('001', 1, 3)">إرسال</button>
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">إلغاء</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </td>
-                    <!-- تحديد موعد اختبار مستويات المراجعة -->
-                    <td>
-                        <div class="dropdown">
-                            <button class="btn btn-ternary dropdown-toggle" data-bs-toggle="dropdown"
-                                aria-expanded="false" data-bs-auto-close="outside">
-                                المستويات
-                            </button>
-
-                            <!-- من هنا راح تبدا ال"دروب داون" أي "مودال" داخله راح يكون مخفي جواه ولن يظهر فوق ال"الدوم" للصفحة لذلك طلعت "المودال" برا ال"دروب داون" تحت وبقيت الأزرار الي تفتحهم بس -->
-                            <ul class="dropdown-menu p-3">
-                                <li class="p-2">
-                                    <h6 class="text-center">1-1</h6>
-                                    <div id="inExecuse00111">
-                                        <div id="inAppointment00111" class="d-inline">
-                                            <!-- حجز موعد -->
-                                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
-                                                data-bs-target="#examAppointment00111">
-                                                تحديد موعد
-                                            </button>
-                                        </div>
-
-                                        <!-- إعتذار -->
-                                        <button type="button" class="btn btn-outline-danger btn-sm"
-                                            data-bs-toggle="modal" data-bs-target="#examExecuse00111">
-                                            إعتذار
-                                        </button>
-                                    </div>
-                                </li>
-                                <li class="p-2">
-                                    <h6 class="text-center">2-1</h6>
-                                    <div id="inExecuse00112">
-                                        <div id="inAppointment00112" class="d-inline">
-                                            <!-- حجز موعد -->
-                                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
-                                                data-bs-target="#examAppointment00112">
-                                                تحديد موعد
-                                            </button>
+  <div class="container mt-5">
+    <div class="card mb-5">
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <!-- TODO: loop trough "Manhaj" test Questions -->
+          <button class="nav-link active" id="tapQ1" data-bs-toggle="tab" data-bs-target="#Q1" type="button" role="tab"
+            aria-controls="Q1" aria-selected="true">1</button>
+          <button class="nav-link" id="tapQ2" data-bs-toggle="tab" data-bs-target="#Q2" type="button" role="tab"
+            aria-controls="Q2" aria-selected="false">2</button>
+        </div>
+      </nav>
+      <div class="tab-content p-5" id="nav-tabContent">
+        <!-- TODO: loop trough "Manhaj" test Questions -->
 
 
-                                        </div>
+        <!-- First Question -->
+        <div class="tab-pane fade show active" id="Q1" role="tabpanel" aria-labelledby="Q1" tabindex="0">
 
-                                        <!-- إعتذار -->
-                                        <button type="button" class="btn btn-outline-danger btn-sm"
-                                            data-bs-toggle="modal" data-bs-target="#examExecuse00112">
-                                            إعتذار
-                                        </button>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- MODAL تحديد موعد اختبار 1-1 -->
-                        <div class="modal fade" id="examAppointment00111" tabindex="-1"
-                            aria-labelledby="examAppointmentLabel" aria-hidden="false">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5">تحديد موعد الإختبار</h1>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form action="#" class="form">
-                                            <div class="d-flex mb-3 gx-5">
-                                                <label for="examDate00111" class="form-label">تاريخ
-                                                    الإختبار:</label>
-                                                <input type="date" id="examDate00111" class="form-control">
-                                            </div>
-                                            <div class="d-flex mb-3 gx-5">
-                                                <label for="examTime00111" class="form-label">وقت
-                                                    الإختبار:</label>
-                                                <input type="time" id="examTime00111" class="form-control">
-                                            </div>
-                                            <div class="text-end">
-                                                <button type="button" class="btn btn-primary"
-                                                    onclick="confirmAppointment('001', 1, 1)">موافق</button>
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">إلغاء</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- MODAL إعتذار عن إختبار 1-1 -->
-                        <div class="modal fade" id="examExecuse00111" tabindex="-1" aria-labelledby="examExecuseLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5">سبب الإعتذار</h1>
-                                    </div>
-                                    <div class="modal-body p-5">
-                                        <form action="#" class="form">
-                                            <textarea class="form-control mb-3" id="studentExecuse00111"
-                                                rows="3"></textarea>
-                                            <div class="text-end">
-                                                <button type="button" class="btn btn-primary"
-                                                    onclick="sendExecuse('001', 1, 1)">إرسال</button>
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">إلغاء</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+          <div class="row">
+            <h5 class="col">المقطع 1</h5>
+            <span class="col-auto badge bg-secondary" id="Q1Result">New</span>
+          </div>
 
-                        <!-- MODAL تحديد موعد اختبار 1-2 -->
-                        <div class="modal fade" id="examAppointment00112" tabindex="-1"
-                            aria-labelledby="examAppointmentLabel" aria-hidden="false">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5">تحديد موعد الإختبار</h1>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form action="#" class="form">
-                                            <div class="d-flex mb-3 gx-5">
-                                                <label for="examDate00112" class="form-label">تاريخ
-                                                    الإختبار:</label>
-                                                <input type="date" id="examDate00112" class="form-control">
-                                            </div>
-                                            <div class="d-flex mb-3 gx-5">
-                                                <label for="examTime00112" class="form-label">وقت
-                                                    الإختبار:</label>
-                                                <input type="time" id="examTime00112" class="form-control">
-                                            </div>
-                                            <div class="text-end">
-                                                <button type="button" class="btn btn-primary"
-                                                    onclick="confirmAppointment('001', 1, 2)">موافق</button>
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">إلغاء</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- MODAL إعتذار عن إختبار 1-2 -->
-                        <div class="modal fade" id="examExecuse00112" tabindex="-1" aria-labelledby="examExecuseLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5">سبب الإعتذار</h1>
-                                    </div>
-                                    <div class="modal-body p-5">
-                                        <form action="#" class="form">
-                                            <textarea class="form-control mb-3" id="studentExecuse00112"
-                                                rows="3"></textarea>
-                                            <div class="text-end">
-                                                <button type="button" class="btn btn-primary"
-                                                    onclick="sendExecuse('001', 1, 2)">إرسال</button>
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">إلغاء</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
+          <div class="form-group">
+            <label for="a1">a:</label>
+            <input type="number" class="form-control" id="a1" value="0" step="1">
+          </div>
+          <div class="form-group">
+            <label for="b1">b:</label>
+            <input type="number" class="form-control" id="b1" value="0" step="1">
+          </div>
+          <div class="form-group">
+            <label for="c1">c:</label>
+            <input type="number" class="form-control" id="c1" value="0" step="1">
+          </div>
+          <div class="form-group">
+            <label for="d1">d:</label>
+            <input type="number" class="form-control" id="d1" value="0" step="1">
+          </div>
+          <div class="form-group">
+            <label for="e1">e:</label>
+            <input type="number" class="form-control" id="e1" value="0" step="1">
+          </div>
+          <div class="form-group">
+            <label for="f1">f:</label>
+            <input type="number" class="form-control" id="f1" value="0" step="1">
+          </div>
+        </div>
 
-            </tbody>
-        </table>
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-    <script src="./exams-appointment.js"></script>
+
+        <!-- Second Question -->
+        <div class="tab-pane fade" id="Q2" role="tabpanel" aria-labelledby="Q2" tabindex="1">
+
+          <div class="row">
+            <h5 class="col">المقطع 2</h5>
+            <span class="col-auto badge bg-secondary" id="Q2Result">New</span>
+          </div>
+
+          <div class="form-group">
+            <label for="a2">a:</label>
+            <input type="number" class="form-control" id="a2" value="0" step="1">
+          </div>
+          <div class="form-group">
+            <label for="b2">b:</label>
+            <input type="number" class="form-control" id="b2" value="0" step="1">
+          </div>
+          <div class="form-group">
+            <label for="c2">c:</label>
+            <input type="number" class="form-control" id="c2" value="0" step="1">
+          </div>
+          <div class="form-group">
+            <label for="d2">d:</label>
+            <input type="number" class="form-control" id="d2" value="0" step="1">
+          </div>
+          <div class="form-group">
+            <label for="e2">e:</label>
+            <input type="number" class="form-control" id="e2" value="0" step="1">
+          </div>
+          <div class="form-group">
+            <label for="f2">f:</label>
+            <input type="number" class="form-control" id="f2" value="0" step="1">
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <!-- Output Result -->
+    <div>
+      <h5>Result</h5>
+      <div class="form-group">
+        <label for="result">Total Mark:</label>
+        <input type="text" class="form-control" id="result" readonly>
+      </div>
+      <div class="form-group">
+        <label for="percentage">Percentage Mark:</label>
+        <input type="text" class="form-control" id="percentage" readonly>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+  <!-- Custom JavaScript -->
+  <script>
+    // Function to calculate the total mark and percentage
+    function calculateResult() {
+      // Question 1
+      let a1 = parseFloat(document.getElementById('a1').value);
+      let b1 = parseFloat(document.getElementById('b1').value);
+      let c1 = parseFloat(document.getElementById('c1').value);
+      let d1 = parseFloat(document.getElementById('d1').value);
+      let e1 = parseFloat(document.getElementById('e1').value);
+      let f1 = parseFloat(document.getElementById('f1').value);
+
+      // Question 2
+      let a2 = parseFloat(document.getElementById('a2').value);
+      let b2 = parseFloat(document.getElementById('b2').value);
+      let c2 = parseFloat(document.getElementById('c2').value);
+      let d2 = parseFloat(document.getElementById('d2').value);
+      let e2 = parseFloat(document.getElementById('e2').value);
+      let f2 = parseFloat(document.getElementById('f2').value);
+
+      // Calculate total marks for each question
+      let totalMark1 = 10 - (0.25 * Math.max(0, a1 - 2)) - (0.25 * Math.max(0, b1 - 1)) - c1 - d1 - (1.5 * e1) - 0.125 * f1;
+      let totalMark2 = 10 - (0.25 * Math.max(0, a2 - 2)) - (0.25 * Math.max(0, b2 - 1)) - c2 - d2 - (1.5 * e2) - 0.125 * f2;
+
+      // Calculate overall result
+      let overallResult = (totalMark1 + totalMark2) / 2;
+
+      // Display results
+      document.getElementById('result').value = overallResult.toFixed(2);
+      document.getElementById('percentage').value = ((overallResult / 10) * 100).toFixed(2) + "%";
+    }
+
+    // Attach the calculateResult function to input change events
+    document.querySelectorAll('input').forEach(input => {
+      input.addEventListener('input', calculateResult);
+    });
+  </script>
+
 </body>
 
 </html>
