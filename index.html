@@ -31,32 +31,32 @@
 
           <div class="row">
             <h5 class="col">المقطع 1</h5>
-            <span class="col-auto badge bg-secondary" id="Q1Result">New</span>
+            <span class="col-auto badge bg-secondary" id="question1"></span>
           </div>
 
           <div class="form-group">
-            <label for="a1">a:</label>
-            <input type="number" class="form-control" id="a1" value="0" step="1">
+            <label for="taradud1">تردد:</label>
+            <input type="number" class="form-control" id="taradud1" name="taradud" value="0" step="1" min="0">
           </div>
           <div class="form-group">
-            <label for="b1">b:</label>
-            <input type="number" class="form-control" id="b1" value="0" step="1">
+            <label for="tanbeh1">تنبيه:</label>
+            <input type="number" class="form-control" id="tanbeh1" name="tanbeh" value="0" step="1" min="0">
           </div>
           <div class="form-group">
-            <label for="c1">c:</label>
-            <input type="number" class="form-control" id="c1" value="0" step="1">
+            <label for="harakah1">حركة:</label>
+            <input type="number" class="form-control" id="harakah1" name="harakah" value="0" step="1" min="0">
           </div>
           <div class="form-group">
-            <label for="d1">d:</label>
-            <input type="number" class="form-control" id="d1" value="0" step="1">
+            <label for="harf1">حرف:</label>
+            <input type="number" class="form-control" id="harf1" name="harf" value="0" step="1" min="0">
           </div>
           <div class="form-group">
-            <label for="e1">e:</label>
-            <input type="number" class="form-control" id="e1" value="0" step="1">
+            <label for="kalemah1">كلمة:</label>
+            <input type="number" class="form-control" id="kalemah1" name="kalemah" value="0" step="1" min="0">
           </div>
           <div class="form-group">
-            <label for="f1">f:</label>
-            <input type="number" class="form-control" id="f1" value="0" step="1">
+            <label for="tajweed1">تجويد:</label>
+            <input type="number" class="form-control" id="tajweed1" name="tajweed" value="0" step="1" min="0">
           </div>
         </div>
 
@@ -66,32 +66,32 @@
 
           <div class="row">
             <h5 class="col">المقطع 2</h5>
-            <span class="col-auto badge bg-secondary" id="Q2Result">New</span>
+            <span class="col-auto badge bg-secondary" id="question2"></span>
           </div>
 
           <div class="form-group">
-            <label for="a2">a:</label>
-            <input type="number" class="form-control" id="a2" value="0" step="1">
+            <label for="taradud2">تردد:</label>
+            <input type="number" class="form-control" id="taradud2" name="taradud" value="0" step="1" min="0">
           </div>
           <div class="form-group">
-            <label for="b2">b:</label>
-            <input type="number" class="form-control" id="b2" value="0" step="1">
+            <label for="tanbeh2">تنبيه:</label>
+            <input type="number" class="form-control" id="tanbeh2" name="tanbeh" value="0" step="1" min="0">
           </div>
           <div class="form-group">
-            <label for="c2">c:</label>
-            <input type="number" class="form-control" id="c2" value="0" step="1">
+            <label for="harakah2">حركة:</label>
+            <input type="number" class="form-control" id="harakah2" name="harakah" value="0" step="1" min="0">
           </div>
           <div class="form-group">
-            <label for="d2">d:</label>
-            <input type="number" class="form-control" id="d2" value="0" step="1">
+            <label for="harf2">حرف:</label>
+            <input type="number" class="form-control" id="harf2" name="harf" value="0" step="1" min="0">
           </div>
           <div class="form-group">
-            <label for="e2">e:</label>
-            <input type="number" class="form-control" id="e2" value="0" step="1">
+            <label for="kalemah2">كلمة:</label>
+            <input type="number" class="form-control" id="kalemah2" name="kalemah" value="0" step="1" min="0">
           </div>
           <div class="form-group">
-            <label for="f2">f:</label>
-            <input type="number" class="form-control" id="f2" value="0" step="1">
+            <label for="tajweed2">تجويد:</label>
+            <input type="number" class="form-control" id="tajweed2" name="tajweed" value="0" step="1" min="0">
           </div>
         </div>
 
@@ -99,16 +99,17 @@
       </div>
     </div>
 
+    <hr class="border border-primary border-1 opacity-25">
     <!-- Output Result -->
     <div>
-      <h5>Result</h5>
-      <div class="form-group">
-        <label for="result">Total Mark:</label>
-        <input type="text" class="form-control" id="result" readonly>
+      <h5 class="text-center mb-5">النتيجة</h5>
+      <div class="col mb-3">
+        <h6 class="text-center">المعدل</h6>
+        <input type="text" class="form-control text-center" id="percentage" readonly>
       </div>
-      <div class="form-group">
-        <label for="percentage">Percentage Mark:</label>
-        <input type="text" class="form-control" id="percentage" readonly>
+      <div class="col mb-3">
+        <h6 class="text-center">التقدير</h6>
+        <input type="text" class="form-control text-center" id="taqdeer" readonly>
       </div>
     </div>
   </div>
@@ -120,43 +121,7 @@
     crossorigin="anonymous"></script>
 
   <!-- Custom JavaScript -->
-  <script>
-    // Function to calculate the total mark and percentage
-    function calculateResult() {
-      // Question 1
-      let a1 = parseFloat(document.getElementById('a1').value);
-      let b1 = parseFloat(document.getElementById('b1').value);
-      let c1 = parseFloat(document.getElementById('c1').value);
-      let d1 = parseFloat(document.getElementById('d1').value);
-      let e1 = parseFloat(document.getElementById('e1').value);
-      let f1 = parseFloat(document.getElementById('f1').value);
-
-      // Question 2
-      let a2 = parseFloat(document.getElementById('a2').value);
-      let b2 = parseFloat(document.getElementById('b2').value);
-      let c2 = parseFloat(document.getElementById('c2').value);
-      let d2 = parseFloat(document.getElementById('d2').value);
-      let e2 = parseFloat(document.getElementById('e2').value);
-      let f2 = parseFloat(document.getElementById('f2').value);
-
-      // Calculate total marks for each question
-      let totalMark1 = 10 - (0.25 * Math.max(0, a1 - 2)) - (0.25 * Math.max(0, b1 - 1)) - c1 - d1 - (1.5 * e1) - 0.125 * f1;
-      let totalMark2 = 10 - (0.25 * Math.max(0, a2 - 2)) - (0.25 * Math.max(0, b2 - 1)) - c2 - d2 - (1.5 * e2) - 0.125 * f2;
-
-      // Calculate overall result
-      let overallResult = (totalMark1 + totalMark2) / 2;
-
-      // Display results
-      document.getElementById('result').value = overallResult.toFixed(2);
-      document.getElementById('percentage').value = ((overallResult / 10) * 100).toFixed(2) + "%";
-    }
-
-    // Attach the calculateResult function to input change events
-    document.querySelectorAll('input').forEach(input => {
-      input.addEventListener('input', calculateResult);
-    });
-  </script>
-
+  <script src="./exam-test-question.js"></script>
 </body>
 
 </html>
